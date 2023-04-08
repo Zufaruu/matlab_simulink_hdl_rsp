@@ -1,0 +1,3 @@
+Transmitter_tc --> Transmitter_tc
+pemancar_bpsk/Transmitter/Sine Wave1 --> Sine_Wave1
+pemancar_bpsk/Transmitter --> Transmitter

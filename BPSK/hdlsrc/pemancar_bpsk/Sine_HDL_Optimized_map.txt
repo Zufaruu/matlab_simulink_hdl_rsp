@@ -1,0 +1,2 @@
+pemancar_bpsk/Transmitter/Sine HDL Optimized/sine hdl --> sine_hdl
+pemancar_bpsk/Transmitter/Sine HDL Optimized --> Sine_HDL_Optimized

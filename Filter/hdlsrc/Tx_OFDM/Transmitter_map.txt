@@ -1,0 +1,30 @@
+ --> Transmitter_pkg
+Tx_OFDM/Transmitter/Cosine HDL Optimized --> Cosine_HDL_Optimized
+Tx_OFDM/Transmitter/Sine HDL Optimized --> Sine_HDL_Optimized
+Tx_OFDM/Transmitter/qam validity check --> qam_validity_check
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF1_1/SimpleDualPortRAM_generic --> SimpleDualPortRAM_generic
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF1_1/SDFCommutator1 --> SDFCommutator1
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF1_1 --> RADIX22FFT_SDF1_1
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_CTRL1_1 --> RADIX22FFT_CTRL1_1
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF2_2/SDFCommutator2 --> SDFCommutator2
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF2_2 --> RADIX22FFT_SDF2_2
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_CTRL1_2 --> RADIX22FFT_CTRL1_2
+Tx_OFDM/Transmitter/IFFT1/TWDLROM_3_1 --> TWDLROM_3_1
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF1_3/Complex4Multiply --> Complex4Multiply
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF1_3/SDFCommutator3 --> SDFCommutator3
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF1_3 --> RADIX22FFT_SDF1_3
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_CTRL1_3 --> RADIX22FFT_CTRL1_3
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF2_4/SDFCommutator4 --> SDFCommutator4
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF2_4 --> RADIX22FFT_SDF2_4
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_CTRL1_4 --> RADIX22FFT_CTRL1_4
+Tx_OFDM/Transmitter/IFFT1/TWDLROM_5_1 --> TWDLROM_5_1
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF1_5/Complex4Multiply --> Complex4Multiply_block
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF1_5/SDFCommutator5 --> SDFCommutator5
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF1_5 --> RADIX22FFT_SDF1_5
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_CTRL1_5 --> RADIX22FFT_CTRL1_5
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF2_6/SDFCommutator6 --> SDFCommutator6
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_SDF2_6 --> RADIX22FFT_SDF2_6
+Tx_OFDM/Transmitter/IFFT1/RADIX22FFT_CTRL1_6 --> RADIX22FFT_CTRL1_6
+Tx_OFDM/Transmitter/IFFT1 --> IFFT1
+Tx_OFDM/Transmitter/QPSK Modulator Baseband --> QPSK_Modulator_Baseband
+Tx_OFDM/Transmitter --> Transmitter
