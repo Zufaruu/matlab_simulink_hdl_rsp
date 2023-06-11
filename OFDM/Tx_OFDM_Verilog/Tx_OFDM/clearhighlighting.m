@@ -1,0 +1,15 @@
+SLStudio.Utils.RemoveHighlighting(get_param('Tx_OFDM', 'handle'));
+SLStudio.Utils.RemoveHighlighting(get_param('gm_Tx_OFDM', 'handle'));
+annotate_port('gm_Tx_OFDM/Transmitter/IQ Modulator/Cosine HDL Optimized/Look-Up Table', 0, 1, '');
+annotate_port('Tx_OFDM/Transmitter/IQ Modulator/Cosine HDL Optimized/cosine hdl/Look-Up Table', 0, 1, '');
+annotate_port('gm_Tx_OFDM/Transmitter/IQ Modulator/Sine HDL Optimized/Look-Up Table', 0, 1, '');
+annotate_port('Tx_OFDM/Transmitter/IQ Modulator/Sine HDL Optimized/sine hdl/Look-Up Table', 0, 1, '');
+annotate_port('gm_Tx_OFDM/Transmitter/OFDM Modulator/OFDM Modulator', 1, 1, '');
+annotate_port('Tx_OFDM/Transmitter/OFDM Modulator/OFDM Modulator', 1, 1, '');
+annotate_port('gm_Tx_OFDM/Transmitter/QAM Modulator/Rectangular QAM Modulator Baseband', 1, 1, '');
+annotate_port('Tx_OFDM/Transmitter/QAM Modulator/Rectangular QAM Modulator Baseband', 1, 1, '');
+annotate_port('gm_Tx_OFDM/Transmitter/QAM Modulator/Rectangular QAM Modulator Baseband', 1, 1, '');
+annotate_port('Tx_OFDM/Transmitter/QAM Modulator/Rectangular QAM Modulator Baseband', 1, 1, '');
+annotate_port('gm_Tx_OFDM/Transmitter/OFDM Modulator/OFDM Modulator/OFDM Modulator', 1, 1, '');
+annotate_port('gm_Tx_OFDM/Transmitter/OFDM Modulator/OFDM Modulator/OFDM Modulator', 1, 1, '');
+annotate_port('Tx_OFDM/Transmitter/OFDM Modulator/OFDM Modulator', 1, 1, '');
