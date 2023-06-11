@@ -68,7 +68,7 @@ xlabel('Lag');
 ylabel('R_x_y');
 title('Cross Correlation of Transmitted and Received Signal');
 
-r_ua = 3e8 * T_symbol / 2;
+r_ua = 3e8 * T_symbol / 2; % 
 range_target = (phase_of_max_c / (2*pi)) * r_ua;
 range_target
 
