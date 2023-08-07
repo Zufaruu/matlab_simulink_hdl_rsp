@@ -23,11 +23,12 @@ i_signal = real(iq_signal);
 q_signal = imag(iq_signal);
 tx_signal = i_signal + q_signal;
 
+
 % Showing time-domain symbol
 figure (1);
 plot(t, tx_signal);
-xlabel('Time');
-ylabel('Amplitude');
+xlabel('Time (s)');
+ylabel('Amplitude (V)');
 title('OFDM Symbol in Time Domain');
 
 %showing freq-domain symbol
@@ -59,12 +60,14 @@ size_lags =  size(lags, 2);
 lags_abs = lags(1, round(size_lags/2):size_lags);
 c_abs = c(1, round(size_lags/2):size_lags);
 
+rxy = c_abs/max(c_abs);
+tau = lags_abs * T_symbol / max(lags_abs);
 lag_of_max_c = lags_abs(c_abs == max(c_abs));
 phase_of_max_c = (lag_of_max_c / size(lags_abs, 2)) * 2 * pi;
 
 figure (2);
-stem(lags_abs,c_abs);
-xlabel('Lag');
+stem(tau, rxy);
+xlabel('\tau (s)');
 ylabel('R_x_y');
 title('Cross Correlation of Transmitted and Received Signal');
 
