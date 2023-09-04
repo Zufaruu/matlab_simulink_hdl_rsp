@@ -1,18 +1,26 @@
-%% Wave Generator
-%golay coding
-golay_reg = golay(256);
-golay_symbol_index = 1;
-golay_code_value = golay_reg(golay_symbol_index, :);
-
+%% Params
 n_subcarrier = 256;
+freq_carrier = 3e9;
+lambda = 3e8 / freq_carrier;
 f_start = 20e6;
 f_end = 22.56e6;
 T_symbol = 1e-4;
 symbol_delay = 12;
 freq_sampling = n_subcarrier / T_symbol;
-f = (linspace(f_start, f_end, n_subcarrier))'; %subcarrier frequencies
-t = (linspace(0, T_symbol, n_subcarrier))'; %signal time
-pri_t = (linspace(0, T_symbol*symbol_delay, n_subcarrier*symbol_delay))';
+range_per_sampling_period = 3e8 * (1/freq_sampling) / 2;
+rcs = 1;
+Gt = 2936;
+Gr = 2936;
+Bn = (1/T_symbol)/symbol_delay; % BW post doppler
+f = (linspace(f_start, f_end, n_subcarrier))';  %subcarrier frequencies
+t = (linspace(0, T_symbol, n_subcarrier))';     %symbol time
+pri_t = (linspace(0, T_symbol*symbol_delay, n_subcarrier*symbol_delay))'; %pri time
+
+%% Wave Generator
+%golay coding
+golay_reg = golay(256);
+golay_symbol_index = 1;
+golay_code_value = golay_reg(golay_symbol_index, :);
 
 %phase shifting
 % alpha = deg2rad(90);
@@ -54,17 +62,21 @@ tx_signal = (i_signal + q_signal);
 
 %% Channel
 % zero padding and delaying signal
-delay_lag = 1;
+delay_lag = 128;
 delayed_symbol_signal = circshift(tx_signal, mod(delay_lag, n_subcarrier));
 zero_padded_signal = [tx_signal; zeros((n_subcarrier*(symbol_delay-1)), 1)];
 delayed_signal = circshift(zero_padded_signal, delay_lag);
-
 if delay_lag > 256*11
     delayed_signal(1:255) = 0;
 end
 
+% attenuating signal (free-space loss)
+Lfs = (((4*pi)^3) * ((range_per_sampling_period*delay_lag)^4) / ((lambda^2) * rcs * Gt * Gr));
+attenuated_signal = delayed_signal / Lfs;
+
 % noising signal
-corrupted_signal = awgn(delayed_signal, 50);
+N0 = 1.38e-23 * 290 * Bn; %temperature noise floor
+corrupted_signal = awgn(attenuated_signal, 480);
 
 % Showing time-domain channeled signal
 figure(3);
@@ -83,7 +95,8 @@ size_lags =  size(lags, 2);
 lags_abs = lags(1, round(size_lags/2):size_lags);
 c_abs = c(round(size_lags/2):size_lags, 1);
 
-rxy = c_abs/max(c_abs);
+% rxy = c_abs/max(c_abs);
+rxy = c_abs;
 tau = lags_abs * T_symbol / max(lags_abs);
 lag_of_max_c = lags_abs(c_abs == max(c_abs));
 phase_of_max_c = (lag_of_max_c / size(lags_abs, 2)) * 2 * pi;
