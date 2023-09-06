@@ -70,8 +70,8 @@ if delay_lag > 256*11
     delayed_signal(1:255) = 0;
 end
 
-% attenuating signal (free-space loss)
-Lfs = (((4*pi)^3) * ((range_per_sampling_period*delay_lag)^4) / ((lambda^2) * rcs * Gt * Gr));
+% attenuating signal (free-space loss in Voltage)
+Lfs = sqrt(((4*pi)^3) * ((range_per_sampling_period*delay_lag)^4) / ((lambda^2) * rcs * Gt * Gr));
 attenuated_signal = delayed_signal / Lfs;
 
 % noising signal
