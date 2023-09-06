@@ -4,5 +4,4 @@ RSP/RSP/Buffer --> Buffer_block
 RSP/RSP/Correlator --> Correlator
 RSP/RSP/Tx Signal --> Tx_Signal
 RSP/RSP/Zero Signal --> Zero_Signal
-RSP/RSP --> RSP_block
-RSP --> RSP
+RSP/RSP --> RSP

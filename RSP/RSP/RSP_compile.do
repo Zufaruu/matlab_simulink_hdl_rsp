@@ -5,5 +5,4 @@ vlog  Buffer_block.v
 vlog  Correlator.v
 vlog  Tx_Signal.v
 vlog  Zero_Signal.v
-vlog  RSP_block.v
 vlog  RSP.v
