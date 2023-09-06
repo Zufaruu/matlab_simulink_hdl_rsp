@@ -1,3 +1,4 @@
+clear;
 %% Params
 n_subcarrier = 256;
 freq_carrier = 3e9;
@@ -62,7 +63,7 @@ tx_signal = (i_signal + q_signal);
 
 %% Channel
 % zero padding and delaying signal
-delay_lag = 128;
+delay_lag = randi(n_subcarrier*symbol_delay)
 delayed_symbol_signal = circshift(tx_signal, mod(delay_lag, n_subcarrier));
 zero_padded_signal = [tx_signal; zeros((n_subcarrier*(symbol_delay-1)), 1)];
 delayed_signal = circshift(zero_padded_signal, delay_lag);
@@ -76,14 +77,14 @@ attenuated_signal = delayed_signal / Lfs;
 
 % noising signal
 N0 = 1.38e-23 * 290 * Bn; %temperature noise floor
-corrupted_signal = awgn(attenuated_signal, 480);
+corrupted_signal = awgn(attenuated_signal, 200);
 
 % Showing time-domain channeled signal
 figure(3);
 plot(pri_t, corrupted_signal);
 xlabel('Time (s)');
 ylabel('Amplitude (V)');
-title('Received Signal Along PRI');
+title('Received Signal Across PRI');
 %% RSP
 rx_signal = corrupted_signal;
 
@@ -98,7 +99,7 @@ c_abs = c(round(size_lags/2):size_lags, 1);
 % rxy = c_abs/max(c_abs);
 rxy = c_abs;
 tau = lags_abs * T_symbol / max(lags_abs);
-lag_of_max_c = lags_abs(c_abs == max(c_abs));
+lag_of_max_c = lags_abs(c_abs == max(c_abs))
 phase_of_max_c = (lag_of_max_c / size(lags_abs, 2)) * 2 * pi;
 
 figure(4);
@@ -108,6 +109,4 @@ ylabel('R_x_y');
 title('Cross Correlation of Transmitted and Received Signal');
 
 lag_delay_time = (1/freq_sampling) * lag_of_max_c;
-range_target = 3e8 * lag_delay_time / 2;
-lag_of_max_c
-range_target
+range_target = 3e8 * lag_delay_time / 2
