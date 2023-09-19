@@ -63,7 +63,7 @@ tx_signal = (i_signal + q_signal);
 
 %% Channel
 % zero padding and delaying signal
-delay_lag = randi(n_subcarrier*symbol_delay)
+delay_lag = 128;
 delayed_symbol_signal = circshift(tx_signal, mod(delay_lag, n_subcarrier));
 zero_padded_signal = [tx_signal; zeros((n_subcarrier*(symbol_delay-1)), 1)];
 delayed_signal = circshift(zero_padded_signal, delay_lag);
@@ -73,11 +73,11 @@ end
 
 % attenuating signal (free-space loss in Voltage)
 Lfs = sqrt(((4*pi)^3) * ((range_per_sampling_period*delay_lag)^4) / ((lambda^2) * rcs * Gt * Gr));
-attenuated_signal = delayed_signal / Lfs;
+attenuated_signal = delayed_signal * Lfs / Lfs;
 
 % noising signal
 N0 = 1.38e-23 * 290 * Bn; %temperature noise floor
-corrupted_signal = awgn(attenuated_signal, 200);
+corrupted_signal = awgn(attenuated_signal, 40);
 
 % Showing time-domain channeled signal
 figure(3);
