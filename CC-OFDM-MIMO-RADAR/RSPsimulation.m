@@ -95,7 +95,7 @@ tx_signal = (i_signal + q_signal);
 % powerbw(tx_signal,freq_sampling)
 %% Channel
 % zero padding and delaying signal
-delay_lag = 500;
+delay_lag = 1094;
 % delayed_symbol_signal = circshift(tx_signal, mod(delay_lag, N_sample));
 ref_signal = [tx_signal; zeros((N_sample*(symbols_per_frame-1)), 1)];
 zero_padded_signal = [tx_signal; zeros((N_sample*(symbols_per_frame-1)), 1)];
