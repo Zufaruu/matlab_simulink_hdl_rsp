@@ -3,7 +3,9 @@ vlog  buffer.v
 vlog  vector_initialization.v
 vlog  Buffer_Signal.v
 vlog  Range_Calculation.v
+vlog  Value_Holder_Max_Corr_Lag.v
 vlog  Correlator.v
+vlog  Obs_Sample_Buffer.v
 vlog  Tx_Signal.v
 vlog  Range_Calculator.v
 vlog  Value_Holder_Range.v

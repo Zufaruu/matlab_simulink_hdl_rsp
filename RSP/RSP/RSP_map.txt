@@ -2,7 +2,9 @@ RSP/RSP/Buffer Signal/buffer --> buffer
 RSP/RSP/Buffer Signal/vector initialization --> vector_initialization
 RSP/RSP/Buffer Signal --> Buffer_Signal
 RSP/RSP/Range Processor/Range Calculator/Range Calculation --> Range_Calculation
+RSP/RSP/Range Processor/Range Calculator/Value Holder Max_Corr_Lag --> Value_Holder_Max_Corr_Lag
 RSP/RSP/Range Processor/Range Calculator/Correlator --> Correlator
+RSP/RSP/Range Processor/Range Calculator/Obs Sample Buffer --> Obs_Sample_Buffer
 RSP/RSP/Range Processor/Range Calculator/Tx Signal --> Tx_Signal
 RSP/RSP/Range Processor/Range Calculator --> Range_Calculator
 RSP/RSP/Range Processor/Value Holder Range --> Value_Holder_Range
